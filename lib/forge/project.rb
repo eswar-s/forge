@@ -28,6 +28,10 @@ module Forge
     def assets_path
       @assets_path ||= File.join(self.source_path, 'assets')
     end
+    
+    def fonts_path
+      @assets_path ||= File.join(self.source_path, 'fonts')
+    end
 
     def build_path
       File.join(self.root, '.forge', 'build')
