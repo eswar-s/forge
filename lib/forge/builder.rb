@@ -155,14 +155,14 @@ module Forge
             sprocket.write_to(destination) unless sprocket.nil?
 
             if @project.config[:compress_js] && destination.end_with?('.js')
-              require "yui/compressor"
+              require "uglifier"
 
               # Grab the initial sprockets output
               sprockets_output = File.open(destination, 'r').read
 
               # Re-write the file, minified
               File.open(destination, 'w') do |file|
-                file.write(YUI::JavaScriptCompressor.new.compress(sprockets_output))
+                file.write(Uglifier.new(:mangle => false).compile(sprockets_output))
               end
             end
           end

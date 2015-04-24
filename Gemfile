@@ -16,6 +16,7 @@ gem "guard-livereload", "~> 1.0.0"
 gem "less", "~> 2.6.0"
 gem "rb-fsevent", "~> 0.9.1"
 gem "yui-compressor", "~> 0.9.6"
+gem "uglifier"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
@@ -23,6 +24,6 @@ group :development do
   gem "rspec"
   gem "cucumber", ">= 0"
   gem "aruba"
-  gem "bundler", "~> 1.0.0"
+  gem "bundler", "~> 1.6.2"
   gem "jeweler", "~> 1.6.4"
 end
